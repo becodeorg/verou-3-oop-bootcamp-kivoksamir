@@ -37,6 +37,8 @@ class basket
 
                  return ($this->total_price()/2);
 
+            }else{
+                echo 'this item has no discount';
             }
     }
        
@@ -73,7 +75,7 @@ echo $product4 ->total_price() . '  ' . 'pear price';
 echo '<br/>';
 echo $product4-> the_tax() . ' ' . 'pear tax';
 echo'<br/>';
-echo $product4->the_discount(). ' ' . ' '. 'pear discount 0% , to have discount you must add it into the array of the discount';
+echo $product4->the_discount(). ' ' . ' '. ' euro discount ';
 
 
 

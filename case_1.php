@@ -2,9 +2,9 @@
 
 $basket = [
 
-    'banana' => ['number' => 6,'price' => 1,],
-    'apple' => ['number' => 3,'price' => 1.5,],
-    'wine' => ['number' => 2,'price' => 10,]
+    'banana' => ['number' => 6,'price' => 1],
+    'apple' => ['number' => 3,'price' => 1.5],
+    'wine' => ['number' => 2,'price' => 10]
 ];
 
 
@@ -28,16 +28,12 @@ function the_Tax($basket)
     
 
     foreach ($basket as $item => $item_info) {
+
         $total_price = $item_info['price'] * $item_info['number'];
 
       
-        if($item == 'banana') 
+        if($item == 'banana' || $item== 'apple') 
         {
-            $tax += $total_price * 0.06;
-
-        }
-        elseif($item=='apple'){
-
             $tax += $total_price * 0.06;
 
         }

@@ -6,6 +6,7 @@ class basket
     public $price;
     public $quantity;
     public $tax;
+   // private $dis_products=['banana' , 'apple' , 'wine']; // only these  products can have a discount .. 
     
 
     public function __construct($name, $price, $quantity, $tax)
@@ -26,6 +27,7 @@ class basket
         return ($this->total_price() * $this->tax);
     }
     public function the_discount()
+    
     {
         return ($this->total_price()/2);
     }

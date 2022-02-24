@@ -34,7 +34,7 @@ function the_Tax($basket)
       
         if($item == 'banana' || $item== 'apple') 
         {
-            $tax += $total_price * 0.06;
+            $tax += $total_price * 0.06;  // OR  (total price /100) * 0.6 
 
         }
         elseif($item == 'wine')

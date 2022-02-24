@@ -1,52 +1,55 @@
 <?php
 
-class Product
+class basket
 {
     public $name;
     public $price;
+    public $quantity;
     public $tax;
+    
 
-    public function __construct($name, $price, $amount, $tax)
+    public function __construct($name, $price, $quantity, $tax)
     {
         $this->name = $name;
         $this->price = $price;
-        $this->amount = $amount;
+        $this->quantity = $quantity;
         $this->tax = $tax;
     }
 
-    public function getTotal()
+    public function total_price()
     {
-        return ($this->price * $this->amount);
+        return ($this->price * $this->quantity);
         
     }
-    public function gettax()
+    public function the_tax()
     {
-        return ($this->getTotal()/100* $this->tax);
+        return ($this->total_price() * $this->tax);
     }
-    public function getDiscount()
+    public function the_discount()
     {
-        return ($this->getTotal()/2);
+        return ($this->total_price()/2);
     }
 }
 
 
-$product1 = new Product ('banana', 1, 6, 6);
-$product2 = new Product ('apple', 1.5, 3, 6);
-$product3 = new Product ('wine', 10, 2, 6);
+$product1 = new basket ('banana', 1 , 6 , 0.6);
+$product2 = new basket ('apple', 1.5 , 3 , 0.06);
+$product3 = new basket ('wine', 10 , 2 , 21);
 
 
 
-echo ($product2 ->getTotal()) + ($product1 ->getTotal())+ ($product3->getTotal());
-echo "<br>";
-echo $product1 -> getTotal();
-echo "<br>";
-echo $product2 ->getTotal();
-echo "<br>";
-echo $product3 -> getTotal();
-echo "<br>";
-echo $product2-> gettax();
-echo "<br>";
-echo $product1->getDiscount();
-
-
-
+echo ($product1 ->total_price()) + ($product2 ->total_price())+ ($product3->total_price()) .' ' .'total_price';
+echo "<br/>";
+echo $product1 ->total_price() . '  ' . 'banana price';
+echo "<br/>";
+echo $product2 ->total_price() . ' '. 'apple price';
+echo "<br/>";
+echo $product3 ->total_price() . ' ' . 'wine price';
+echo "<br/>";
+echo $product2-> the_tax() . ' ' . 'apple & banana tax';
+echo "<br/>";
+echo $product1->the_discount() . ' '. ' '.' bannan discount 50%';
+echo '<br/>';
+echo $product2->the_discount(). ' ' . ' '. 'apple discount 50%';
+echo '<br/>';
+echo $product3->the_discount(). ' ' . ' '. 'wine discount 50%';

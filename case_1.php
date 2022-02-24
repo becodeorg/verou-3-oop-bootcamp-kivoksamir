@@ -14,7 +14,7 @@ function total_Price($basket)
     $total_price = 0;
 
     foreach ($basket as $item_info) {
-        $total_price += $item_info['price'] * $item_info['number'];
+        $total_price += $item_info['price'] * $item_info['number'];  // 
     }
 
     return $total_price;
